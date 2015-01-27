@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token: MyString
+  expires_at: 2015-01-28 01:03:29
+  user_id: 1
+
+two:
+  token: MyString
+  expires_at: 2015-01-28 01:03:29
+  user_id: 1

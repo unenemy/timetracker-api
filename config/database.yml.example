@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: timetracker-api_development
+  username: postgres
+  password:
+
+test:
+  <<: *default
+  database: timetracker-api_test
+
+production:
+  <<: *default
+  database: timetracker-api_production
+  username: timetracker-api
+  password: <%= ENV['TIMETRACKER-API_DATABASE_PASSWORD'] %>
