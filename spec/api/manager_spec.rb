@@ -14,4 +14,10 @@ describe 'Managers' do
     expect(response.status).to eq 200
     expect(json).to have_key(:token)
   end
+
+  it 'should create manager when signed in as manager' do
+    token = sign_in_as(:manager)
+    post '/api/v1/managers', { manager: attributes_for(:manager) }, {'Authorization' => "Token: token=#{token}"}
+    expect(response.status).to eq(201)
+  end
 end

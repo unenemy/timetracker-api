@@ -7,6 +7,7 @@ gem 'spring', :group => :development
 gem 'pg'
 gem 'inherited_resources'
 gem 'bcrypt', '~> 3.1.7'
+gem 'pry'
 
 group :test, :development do
   gem 'spring-commands-rspec'

@@ -195,6 +195,7 @@ DEPENDENCIES
   guard-rspec
   inherited_resources
   pg
+  pry
   rails (= 4.2.0)
   rails-api
   rb-fsevent
