@@ -11,10 +11,11 @@ gem 'bcrypt', '~> 3.1.7'
 group :test, :development do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'terminal-notifier-guard', '~> 1.6.1'
+  gem 'faker'
 end
 
 # To use Jbuilder templates for JSON
