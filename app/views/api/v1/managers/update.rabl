@@ -1,0 +1,2 @@
+object @manager
+extends 'base'

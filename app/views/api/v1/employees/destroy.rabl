@@ -1,0 +1,2 @@
+object @employee
+extends 'base'

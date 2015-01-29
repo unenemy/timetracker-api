@@ -1,0 +1,2 @@
+collection @employees
+extends 'base'

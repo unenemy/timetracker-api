@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api, defaults: { format: :json } do
+  namespace :api, defaults: { format: :json }, except: [:edit, :new] do
     namespace :v1 do
       concern :authenticable do
         collection do
@@ -7,11 +7,10 @@ Rails.application.routes.draw do
           delete :sign_out
         end
       end
-      resources :employees, concerns: :authenticable do
-        resources :timetracks
-      end
-      resources :timetracks
+
+      resources :employees, concerns: :authenticable
       resources :managers, concerns: :authenticable
+      resources :timetracks
     end
   end
 end

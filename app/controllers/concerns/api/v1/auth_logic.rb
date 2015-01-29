@@ -16,7 +16,7 @@ module API::V1::AuthLogic
   end
 
   def current_token
-    token = request.authorization.split('token=').last
+    token = request.authorization.to_s.split('token=').last
     @current_token ||= Token.find_by(token: token)
   end
 end

@@ -8,6 +8,8 @@ gem 'pg'
 gem 'inherited_resources'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
+gem 'rabl', git: 'https://github.com/unenemy/rabl'
+gem 'oj'
 
 group :test, :development do
   gem 'spring-commands-rspec'
