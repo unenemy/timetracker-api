@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127230329) do
+ActiveRecord::Schema.define(version: 20150129165700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "timetracks", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "amount_in_minutes"
+    t.integer  "employee_id"
+    t.date     "log_date"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "tokens", force: :cascade do |t|
     t.string   "token"

@@ -14,4 +14,12 @@ class User < ActiveRecord::Base
       false
     end
   end
+
+  def employee?
+    is_a?(Employee)
+  end
+
+  def manager?
+    is_a?(Manager)
+  end
 end
