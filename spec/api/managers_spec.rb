@@ -92,7 +92,7 @@ describe 'Managers requests:' do
       expect(json).to have_key('error')
     end
 
-    it 'should destroy manager' do
+    it 'should not destroy manager' do
       manager = create(:manager)
       delete "/api/v1/managers/#{manager.id}"
       expect(response.status).to eq(400)

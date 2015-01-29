@@ -109,7 +109,7 @@ describe 'Timetracks requests:' do
       expect(timetrack.reload.description).to eq(new_description)
     end
 
-    it 'should delete his own timetrack' do
+    it 'should delete timetrack' do
       some_other_employee = create(:employee)
       timetrack = some_other_employee.timetracks.create(attributes_for(:timetrack))
       delete "/api/v1/timetracks/#{timetrack.id}"
