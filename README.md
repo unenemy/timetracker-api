@@ -3,8 +3,11 @@
 This is Ruby On Rails based JSON API for timetracker application.
 
 Implemented:
+
 1. Token-authentication for employees and managers.
+
 2. Restricted timetracks managing
+
 3. API fully covered with Rspec request tests.
 
 # Documentation
@@ -99,6 +102,14 @@ otherwise returns with status `422`
 
 *all actions require authentication*
 
+Common employee object looks like:
+
+```json
+"employee": {
+  "email": "example@example.com",
+}
+```
+
 ### Update employee
 
 `PATCH "/api/v1/employees/EMPLOYEE_ID"`
@@ -108,12 +119,7 @@ otherwise returns with status `422`
 }
 ```
 
-if succceeded returns with status `200`
-```json
-"employee": {
-  "email": "example@example.com",
-}
-```
+if succceeded returns with status `200` employee object
 
 otherwise returns with status `400`
 
@@ -125,34 +131,19 @@ otherwise returns with status `400`
 
 *only managers can delete employees*
 `DELETE "/api/v1/employees/EMPLOYEE_ID"`
+if succceeded returns with status `200` employee object
 
 ### Display single employee
 
 `GET "/api/v1/employees/EMPLOYEE_ID"`
 
-returns with status `200`
-
-```json
-"employee": {
-  "email": "example@example.com",
-}
-```
+returns with status `200` employee object
 
 ### Display all employees
 
 `GET "/api/v1/employees"`
 
-returns with status `200` array of all employees
-```json
-[
-  "employee": {
-    "email": "example@example.com",
-  },
-  "employee": {
-    "email": "example@example.com",
-  }
-]
-```
+returns with status `200` array of all employee objects
 
 ## Managers API
 
