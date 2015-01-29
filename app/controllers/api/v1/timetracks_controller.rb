@@ -1,4 +1,7 @@
 class API::V1::TimetracksController < API::V1::BaseController
+  def index
+    @timetracks = end_of_association_chain.ransack(params[:q]).result
+  end
   private
   def timetrack_params
     permitted = [:description, :date, :amount_in_minutes]
