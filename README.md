@@ -198,3 +198,77 @@ returns with status `200` manager object
 
 returns with status `200` manager object
 
+## Timetracks API
+
+*All requests need authentication*
+
+Common timetrack object looks like:
+
+```json
+"timetrack":{
+  "id":1,
+  "description":"text",
+  "amount_in_minutes":60,
+  "log_date":"YYYY-MM-DD"
+}
+```
+
+### Display list of timetracks
+
+`GET "/api/v1/timetracks"`
+returns array of timetrack objects with status `200`
+
+*NOTE: will return all timetracks if signed in as manager and only employee's timetracks if signed in as employee*
+
+### Display single timetrack
+
+`GET "/api/v1/timetracks/TIMETRACK_ID"`
+returns timetrack object with status `200` or an error with status `404`
+
+*NOTE: employee cannot see other employee's timetracks. Managers can see any timetracks*
+
+### Create timetrack
+
+`POST "/api/v1/timetracks"`
+
+```json
+"timetrack":{
+  "description":"text",
+  "amount_in_minutes":60,
+  "log_date":"YYYY-MM-DD"
+}
+
+```
+
+returns timetrack object with status `200`
+
+If signed in as manager, one can send `employee_id` to assign timetrack to special employee:
+```json
+"timetrack":{
+  "description":"text",
+  "amount_in_minutes":60,
+  "log_date":"YYYY-MM-DD",
+  "employee_id":1
+}
+
+```
+
+### Update timetrack
+
+`PATCH "/api/v1/timetracks/TIMETRACK_ID"`
+
+```json
+"timetrack":{
+  "description":"text",
+  "amount_in_minutes":60,
+  "log_date":"YYYY-MM-DD"
+}
+
+```
+
+returns timetrack object with status `200` or error with status `404`
+
+### Delete timetrack
+
+`DELETE "/api/v1/timetracks/TIMETRACK_ID"`
+returns timetrack object with status `200` or error with status `404`
