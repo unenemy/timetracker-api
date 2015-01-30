@@ -17,7 +17,6 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'terminal-notifier-guard', '~> 1.6.1'
   gem 'faker'
 end

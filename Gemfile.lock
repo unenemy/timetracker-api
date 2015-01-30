@@ -217,7 +217,6 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails-api
   ransack
-  rb-fsevent
   rspec-rails
   spring
   spring-commands-rspec
