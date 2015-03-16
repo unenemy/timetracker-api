@@ -32,7 +32,13 @@ To get the token, either employee or manager should be authenticated.
 if email and password match, returns with status `200`
 
 ```json
-{"token":"qweks1k23j231k23"}
+{
+  "token":"qweks1k23j231k23",
+  "manager": {
+    "email": "example@example.com",
+    "id": 123
+  }
+}
 ```
 
 otherwise returns status `400`
@@ -54,7 +60,13 @@ otherwise returns status `400`
 if email and password match, returns
 
 ```json
-{"token":"qweks1k23j231k23"}
+{
+  "token":"qweks1k23j231k23",
+  "employee": {
+    "email": "example@example.com",
+    "id": 123
+  }
+}
 ```
 
 otherwise returns with status `400`
