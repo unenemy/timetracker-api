@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
 
   def authenticate(password)
     if super(password)
-      tokens.create.token
+      [tokens.create.token, self]
     else
-      false
+      [false, self]
     end
   end
 

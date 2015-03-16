@@ -2,9 +2,9 @@ class API::V1::ManagersController < API::V1::BaseController
   before_action :authenticate_manager, except: [:sign_in, :sign_out]
 
   def sign_in
-    token = Manager.authenticate(params[:manager][:email], params[:manager][:password])
+    token, manager = Manager.authenticate(params[:manager][:email], params[:manager][:password])
     if token
-      render json: { token: token }
+      render json: { token: token, manager: manager }
     else
       render json: { error: 'Wrong credentials' }, status: :bad_request
     end

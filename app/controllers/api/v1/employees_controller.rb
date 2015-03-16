@@ -4,9 +4,9 @@ class API::V1::EmployeesController < API::V1::BaseController
   before_action :authenticate_manager, only: :destroy
 
   def sign_in
-    token = Employee.authenticate(params[:employee][:email], params[:employee][:password])
+    token, employee = Employee.authenticate(params[:employee][:email], params[:employee][:password])
     if token
-      render json: { token: token }
+      render json: { token: token, employee: employee }
     else
       render json: { error: 'Wrong credentials' }, status: :bad_request
     end
