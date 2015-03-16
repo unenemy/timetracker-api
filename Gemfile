@@ -11,6 +11,7 @@ gem 'pry'
 gem 'rabl', git: 'https://github.com/unenemy/rabl'
 gem 'oj'
 gem 'ransack'
+gem 'rack-cors'
 
 group :test, :development do
   gem 'spring-commands-rspec'
