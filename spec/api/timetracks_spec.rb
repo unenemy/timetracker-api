@@ -14,7 +14,7 @@ describe 'Timetracks requests:' do
       2.times { @me.timetracks.create(attributes_for(:timetrack)) }
       get '/api/v1/timetracks'
       expect(response.status).to eq(200)
-      expect(json.count).to eq(2)
+      expect(json['timetracks'].count).to eq(2)
     end
 
     it 'should display my timetrack' do
@@ -83,7 +83,7 @@ describe 'Timetracks requests:' do
       end
       get '/api/v1/timetracks'
       expect(response.status).to eq(200)
-      expect(json.count).to eq(3)
+      expect(json['timetracks'].count).to eq(3)
     end
 
     it 'should display any timetrack' do

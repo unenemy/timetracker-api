@@ -1,2 +1,2 @@
-collection @timetracks
+collection @timetracks => :timetracks
 extends 'base'
