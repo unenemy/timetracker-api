@@ -1,1 +1,2 @@
 collection @timetracks
+extends 'base'
